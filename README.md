@@ -6,7 +6,7 @@ An independent concept for a customer-facing kit selector for Mawi DNA Technolog
 - Uses only figures from Mawi's own product pages (read 10 Nov 2026), all linked under Sources on the page
 - No performance claims and no comparisons with other companies' kits. In the USA, Mawi designates these kits For Research Use Only.
 
-**Live site:** https://vaishanavi04saware-stack.github.io/iswab-kit-selector/
+**Live site:** https://vaishanavi04saware-stack.github.io/Kit-Comparison-Tool/
 
 ## Files
 - `index.html`: page structure
