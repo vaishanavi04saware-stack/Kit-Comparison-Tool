@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which iSWAB Kit Fits Your Study?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="band">
+  <div class="wrap">
+    <div class="top">
+      <span class="label">iSWAB portfolio · kit selector concept</span>
+      <span class="pill pill-ruo" title="Mawi labels these kits For Research Use Only in the USA">Research use only (US)</span>
+    </div>
+    <h1>Which iSWAB kit fits your study?</h1>
+    <p class="lede">Describe your sample and your assay. The tool matches it to an existing Mawi iSWAB kit, using only figures from Mawi's own product pages, and shows which checks pass, which need a closer look, and why.</p>
+    <div class="facts" aria-label="Portfolio facts from Mawi product pages">
+      <div class="fact"><b>9</b><span>iSWAB kits compared</span></div>
+      <div class="fact"><b>2–30 µg</b><span>published DNA yield range across DNA kits</span></div>
+      <div class="fact"><b>21–60 days</b><span>published room-temp (15–30 °C) windows, real time</span></div>
+      <div class="fact"><b>-20 to -80 °C</b><span>longer storage per Mawi's guidance</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="presets" role="group" aria-label="Example studies">
+    <span class="label">Try an example:</span>
+    <button class="chip" data-preset="peds">Pediatric genotyping cohort</button>
+    <button class="chip" data-preset="exome">Mail-in exome study</button>
+    <button class="chip" data-preset="gut">Gut microbiome, DNA + RNA</button>
+    <button class="chip" data-preset="forensic">Forensic reference samples</button>
+    <button class="chip" data-preset="rna">Buccal gene expression</button>
+  </div>
+
+  <div class="work">
+    <form class="panel" id="form" aria-labelledby="formTitle">
+      <h2 id="formTitle">Your study</h2>
+      <div class="field">
+        <label for="analyte">What will you analyze?<span class="tag tag-you">You</span></label>
+        <select id="analyte"></select>
+      </div>
+      <div class="field">
+        <label for="sample">What will you collect?<span class="tag tag-you">You</span></label>
+        <select id="sample"></select>
+      </div>
+      <div class="field">
+        <label for="assay">Main downstream assay<span class="tag tag-you">You</span></label>
+        <select id="assay"></select>
+      </div>
+      <div class="field" id="needField">
+        <label for="need">DNA needed per sample (µg)<span class="tag tag-you">You</span></label>
+        <input id="need" type="number" min="0" max="100" step="0.5" inputmode="decimal">
+        <span class="hint">Total for every run, re-run and archive aliquot you plan from one sample.</span>
+      </div>
+      <div class="field">
+        <label for="days">Days at room temperature before processing<span class="tag tag-you">You</span></label>
+        <input id="days" type="number" min="0" max="365" step="1" inputmode="numeric">
+        <span class="hint">Shipping plus any lab backlog, using your worst realistic case.</span>
+      </div>
+      <p class="hint" style="font-size:13px;color:var(--muted);margin:4px 0 0">Kit figures on the right are tagged <span class="tag tag-spec" style="margin-left:0">Published</span> and come from Mawi's product pages.</p>
+    </form>
+
+    <div>
+      <article class="result" id="result" aria-live="polite"></article>
+      <div class="callouts">
+        <div class="callout c-why"><h3>What decided this pick</h3><div id="why"></div></div>
+        <div class="callout c-ask"><h3>Confirm with Mawi before ordering</h3><ul id="ask"></ul></div>
+      </div>
+      <div class="summary">
+        <span class="label">Recommendation summary to share</span>
+        <p id="summaryText"></p>
+        <button class="btn btn-ghost" id="copyBtn" type="button">Copy summary</button><span class="copied" id="copied" role="status"></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="compare" aria-labelledby="cmpTitle">
+    <h2 id="cmpTitle">Side by side</h2>
+    <p class="sub" id="cmpSub"></p>
+    <div class="scroll"><table id="cmp"></table></div>
+    <p class="notcovered">Not covered here: respiratory pathogen testing (iSWAB-RC-EL, a separately FDA-cleared transport medium) and blood collection (HemaSure-OMICs). See Mawi's <a href="https://www.mawidna.com/all-product/">full product list</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="credit">Independent concept by Vaishanavi Saware, built from public sources. Not affiliated with or endorsed by Mawi DNA Technologies.</p>
+    <p>Mawi states that in the USA these products are designated For Research Use Only and not for use in diagnostic procedures. This tool helps choose a collection kit for research. It is not a substitute for Mawi's Instructions for Use or for validating the kit with your own extraction method and assay. Figures were read from Mawi's product pages on 10 Nov 2026 and may change.</p>
+    <h2>Sources</h2>
+    <ol id="sources"></ol>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
